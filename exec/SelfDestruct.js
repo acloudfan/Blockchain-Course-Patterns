@@ -24,3 +24,5 @@ module.exports = function(callback) {
         selfDestruct.setValue("NEW Value");
     });
 }
+
+
