@@ -6,9 +6,11 @@ pragma solidity ^0.4.4;
 
 contract  ChildContract {
   // Represents the identifier for some kind of asset
+
   uint8     public  identity;
   address   public  owner;
   bytes32   public  name;
+
   modifier  OwnerOnly {if(msg.sender != owner) throw; else _;}
   event     ChildOwnerTransfered(uint8 identity, bytes32 from, bytes32 to);
 
@@ -19,7 +21,7 @@ contract  ChildContract {
     name = nm;
   }
   // transfer the ownership
-  function  transferOwnership(address newOwner, bytes32 nm) OwnerOnly {
+  function  transferOwnership (address newOwner, bytes32 nm) OwnerOnly {
     bytes32  former = name; 
     owner = newOwner;
     name = nm;
@@ -50,7 +52,9 @@ contract ContractFactory {
   }
 
   // Anyone can pay the price and purchase the asset
+
   function  purchase(bytes32 name) payable {
+
     if(msg.value < initialPrice) throw;
     // Look for available asset i.e., one that is not sold yet
     for(uint8 i = 0; i < children.length; i++){
@@ -67,7 +71,9 @@ contract ContractFactory {
 
 
   // Returns the information about the child contract at specified index
+
   function  getInfo(uint8 childIndex) constant returns(uint8, address, bytes32){
+    
     return (children[childIndex].identity(),children[childIndex].owner(),children[childIndex].name());
   }
   // Returns the child contract address

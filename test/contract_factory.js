@@ -4,6 +4,7 @@ var ChildContract = artifacts.require("./ChildContract.sol");
 contract('ContractFactory', function(accounts) {
   it("should assert true", function() {
     var contractFactory;
+    var childContract;
     return ContractFactory.deployed().then(function(instance){
         contractFactory = instance;
         
@@ -17,13 +18,16 @@ contract('ContractFactory', function(accounts) {
     }).then(function(){
       dumpOwners(contractFactory);
       // get the child contract address for John Wayne i.e., index=0
-      return contractFactory.getChildContractAddress(0);
+      return contractFactory.getChildContractAddress.call(0);
     }).then(function(result){
       console.log(result)
-      var childContract = ChildContract.at(result);
+      childContract = ChildContract.at(result);
       return childContract.transferOwnership(accounts[3],"Jake Crown",{from:accounts[1]});
     }).then(function(result){
       dumpOwners(contractFactory);
+
+      // John Wayne tries to sell the asset again
+      return childContract.transferOwnership(accounts[3],"Sue Kenworth",{from:accounts[1]});
     });
   });
 });
