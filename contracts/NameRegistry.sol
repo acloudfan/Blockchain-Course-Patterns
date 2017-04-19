@@ -35,14 +35,14 @@ contract NameRegistry {
     return true;
   }
 
-  function  removeContract() returns(bool){
-    // Code this on your own
-    return false;
-  }
-
   // Contracts having a dependency on this contract will invoke this function
   function  getContractInfo(bytes32 name) constant returns(address,uint16){
     return (nameInfo[name].contractInstance, nameInfo[name].version);
+  }
+
+  function  removeContract() returns(bool){
+    // Code this on your own
+    return false;
   }
 
 }
