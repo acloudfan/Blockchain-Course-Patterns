@@ -7,32 +7,27 @@ contract('ContractFactory', function(accounts) {
     var childContract;
     return ContractFactory.deployed().then(function(instance){
         contractFactory = instance;
-        
-        return contractFactory.getChildrenCount.call();
-    }).then(function(result){
-      //console.log(result.toNumber());
-      // dumpOwners(contractFactory);
       // lets transfer ownership
       contractFactory.purchase("John Wayne",{value:100, from:accounts[1]});
       contractFactory.purchase("Cindy Smith",{value:100, from:accounts[2]});
-    }).then(function(){
-      dumpOwners(contractFactory);
+    }).then(function(result){
+      printOwners(contractFactory);
       // get the child contract address for John Wayne i.e., index=0
       return contractFactory.getChildContractAddress.call(0);
     }).then(function(result){
-      console.log(result)
+      console.log("John Wayne - Asset Address=", result);
       childContract = ChildContract.at(result);
       return childContract.transferOwnership(accounts[3],"Jake Crown",{from:accounts[1]});
     }).then(function(result){
-      dumpOwners(contractFactory);
+      printOwners(contractFactory);
 
       // John Wayne tries to sell the asset again
-      return childContract.transferOwnership(accounts[3],"Sue Kenworth",{from:accounts[1]});
+      //return childContract.transferOwnership(accounts[3],"Sue Kenworth",{from:accounts[1]});
     });
   });
 });
 
-function  dumpOwners(contractFactory){
+function  printOwners(contractFactory){
     // var ctr = 0;
     for(i=0; i < 5; i++){
         contractFactory.getInfo(i).then(function(result){

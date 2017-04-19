@@ -2,6 +2,7 @@ pragma solidity ^0.4.4;
 
 /**
  * A Contract can create other contracts.
+ * Represents an asset such as car, diamond, land-deed ....
  **/
 
 contract  ChildContract {

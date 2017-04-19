@@ -22,6 +22,7 @@ module.exports = function(callback) {
         console.log("Contract Destroyed");
         // This call will throw an excepion as contract is destroyed
         selfDestruct.setValue("NEW Value");
+        
     });
 }
 
