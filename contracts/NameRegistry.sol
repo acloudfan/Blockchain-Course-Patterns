@@ -16,7 +16,6 @@ contract NameRegistry {
 
   // Manages the name to address mapping
   mapping(bytes32 => ContractInfo)  nameInfo;
-  modifier  OwnerOnly(address owner) {if(msg.sender != owner) throw; else _;}
 
   // Adds the version of the contract to be used by apps
   function  registerName (bytes32 name, address conAddress, uint16  ver) returns(bool){
