@@ -96,8 +96,20 @@
       "links": {},
       "address": "0x14e6cd6d0cf237a92054e904c029bffb77120300",
       "updated_at": 1492640428441
+    },
+    "1492650868898": {
+      "events": {},
+      "links": {},
+      "address": "0x8057fadd401c684988cd256224954b2a556c6670",
+      "updated_at": 1492650896759
+    },
+    "1492651252641": {
+      "events": {},
+      "links": {},
+      "address": "0x9536535b7e73b0dfb389a0e538511ee3ebf66b5f",
+      "updated_at": 1492651264619
     }
   },
   "schema_version": "0.0.5",
-  "updated_at": 1492640428441
+  "updated_at": 1492651264619
 }
