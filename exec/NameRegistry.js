@@ -14,17 +14,17 @@ module.exports = function (callback) {
         nameRegistry.registerName ("SavingAccountFactory", generateRandomAddress(), 1);
 
         //2. Print the names & information on console
-        PrintRegistry(nameRegistry);
+        printRegistry(nameRegistry);
 
         //3. Update to version 2 - update the address for the contract
         return nameRegistry.registerName("CheckingAccountFactory", generateRandomAddress(), 2);
     }).then(function(result){
         //4. Print the names & information on console
-        PrintRegistry(nameRegistry);
+        printRegistry(nameRegistry);
     });
 }
 
-function PrintRegistry(nameRegistry) {
+function printRegistry(nameRegistry) {
     nameRegistry.getContractInfo("CheckingAccountFactory").then(function(result){
         console.log("CheckingAccountFactory", result[0],' version=', result[1].toNumber());
         return nameRegistry.getContractInfo("SavingAccountFactory")
