@@ -5,6 +5,8 @@ var SelfDestruct = artifacts.require("./SelfDestruct.sol");
 var ContractFactory = artifacts.require("./ContractFactory.sol");
 var NameRegistry = artifacts.require("./NameRegistry.sol");
 
+var UserAddressRegistry = artifacts.require("./UserAddressRegistry.sol");
+
 module.exports = function(deployer) {
   deployer.deploy(ConvertLib);
   deployer.link(ConvertLib, MetaCoin);
@@ -15,4 +17,6 @@ module.exports = function(deployer) {
   deployer.deploy(ContractFactory,5,100);
 
   deployer.deploy(NameRegistry);
+
+  deployer.deploy(UserAddressRegistry);
 };
