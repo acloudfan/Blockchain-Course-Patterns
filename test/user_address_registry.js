@@ -18,7 +18,12 @@ contract('UserAddressRegistry', function(accounts) {
       addressRegistry.updateName(accounts[2],"Cindy Only",{from:accounts[0]});
       
       printNames(addressRegistry, result.toNumber())
-      
+      // Lets delete George
+      addressRegistry.registerName("",{from:accounts[1]});
+      return addressRegistry.count.call();
+    }).then(function(result){
+      console.log(result)
+      printNames(addressRegistry, result.toNumber())
     });
   });
 });
@@ -29,7 +34,7 @@ function  printNames(addressRegistry, count){
         addressRegistry.getByIndex.call(i).then( function(result){
           var name = web3.toAscii(result[1]);
           name = name.replace(/\0/g, '');
-          console.log(result[0],'----',name);
+          console.log(result[0],'----',name,'---', new Date(result[2].toNumber()*1000));
         });
     }
 }
