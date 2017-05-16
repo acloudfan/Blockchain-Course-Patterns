@@ -23,6 +23,16 @@ contract('UserAddressRegistry', function(accounts) {
       return addressRegistry.count.call();
     }).then(function(result){
       console.log(result)
+      // Should have deleted George Clooney
+      printNames(addressRegistry, result.toNumber())
+
+      // Delete Cindy
+      addressRegistry.deleteName(accounts[2], {from:accounts[0]});
+
+      return addressRegistry.count.call();
+      
+    }).then(function(result){
+      // Should print only Jackie Chen
       printNames(addressRegistry, result.toNumber())
     });
   });

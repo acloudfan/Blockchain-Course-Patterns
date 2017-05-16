@@ -58,6 +58,14 @@ contract UserAddressRegistry {
     return true;
   }
 
+  // Owner can force delete
+  function deleteName(address given) OwnerOnly returns (bool){
+    delete(addressMap[given]);
+    removeFromAddresses(given);
+    return true;
+  }
+
+
   // Returns the count of registered names
   function  count() constant returns (uint){
     return addresses.length;
