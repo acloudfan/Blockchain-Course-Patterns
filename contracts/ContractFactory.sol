@@ -12,7 +12,7 @@ contract  ChildContract {
   address   public  owner;
   bytes32   public  name;
 
-  modifier  OwnerOnly {if(msg.sender != owner) throw; else _;}
+  modifier  OwnerOnly {if(msg.sender != owner) /**throw**/ revert(); else _;}
   event     ChildOwnerTransfered(uint8 identity, bytes32 from, bytes32 to);
 
   // Constructor
@@ -56,7 +56,7 @@ contract ContractFactory {
 
   function  purchase(bytes32 name) payable {
 
-    if(msg.value < initialPrice) throw;
+    if(msg.value < initialPrice) /*throw*/ revert();
     // Look for available asset i.e., one that is not sold yet
     for(uint8 i = 0; i < children.length; i++){
       // Check if contract factoy is the owner
@@ -66,7 +66,7 @@ contract ContractFactory {
       }
     }
     // No more assets available - so throw an exception
-    throw;
+    /**throw**/ revert();
   }
 
 
