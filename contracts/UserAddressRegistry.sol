@@ -8,7 +8,9 @@ pragma solidity ^0.4.4;
 contract UserAddressRegistry {
 
   address   owner;
+
   mapping(address => bytes32)  addressMap;
+  
   address[]   addresses;
 
   modifier OwnerOnly() {
@@ -31,8 +33,11 @@ contract UserAddressRegistry {
   }
 
   function  count() constant returns (uint){
+
     return addresses.length;
+
   }
+
   
   function  getNameByIndex(uint index) constant returns (bytes32){
     address addr = addresses[index];
