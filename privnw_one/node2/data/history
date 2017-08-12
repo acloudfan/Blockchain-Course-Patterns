@@ -1,0 +1,5 @@
+admin.peers
+admin.nodeInfo
+admin.nodeInfo.enode
+admin.peers
+eth.getBalance("d49d41c06b6caf7a565183aa2bda34b100697171")
