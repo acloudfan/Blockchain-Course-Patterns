@@ -2,7 +2,7 @@ Solidity Patterns
 
 Ethereum Blockchain Decentralized Apps Development & Design
 
-http://acloudfan.com
+http://acloudfan.com/learn-blockchain
 
 If you see compiler warnings related to Throw;
 It is because the Throw statement is deprecated & replaced by revert()
