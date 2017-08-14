@@ -1,0 +1,12 @@
+{
+    "config": {
+        "chainId": "PROVIDE CHAIN ID"
+    },
+    "difficulty": "0x400",
+    "gasLimit": "0x8000000",
+    "alloc": {
+        "ACCOUNT ADDRESS FOT INITIAL ALLOCATION": {
+            "balance": "30000000000000000000000000000"
+        }
+    }
+}
