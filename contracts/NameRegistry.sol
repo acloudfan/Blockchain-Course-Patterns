@@ -21,7 +21,7 @@ contract NameRegistry {
   function  registerName (bytes32 name, address conAddress, uint16  ver) returns(bool){
 
     // Version MUST start with number 1
-    if(ver < 1) throw;
+    if(ver < 1) /*throw*/ revert();
 
     if(nameInfo[name].contractInst == 0){
       nameInfo[name].owner=msg.sender;

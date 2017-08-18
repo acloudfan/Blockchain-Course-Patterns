@@ -1,5 +1,7 @@
 var ContractFactory = artifacts.require("./ContractFactory.sol");
-var ChildContract = artifacts.require("./ChildContract.sol");
+
+// Commented - Aug 18, 2017 - Chen pointed out its not needed - Thx
+//var ChildContract = artifacts.require("./ChildContract.sol");
 
 contract('ContractFactory', function(accounts) {
   it("should assert true", function() {

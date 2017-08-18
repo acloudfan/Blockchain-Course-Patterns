@@ -11,8 +11,7 @@ contract UserAddressRegistry {
 
   address   owner;
 
-<<<<<<< HEAD
-  mapping(address => bytes32)  addressMap;
+
   
 // =======
   struct User {
@@ -22,13 +21,13 @@ contract UserAddressRegistry {
 
   // Manages the mapping between address & name
   mapping(address => User)  addressMap;
+
   // Manages the list of addresses
-// >>>>>>> 0d32f5a3dc5dd4bb6619778465a4ea1b491ba444
   address[]   addresses;
 
   modifier OwnerOnly() {
     if(msg.sender == owner) _;
-    else throw;
+    else revert();
   }
 
   function UserAddressRegistry(){

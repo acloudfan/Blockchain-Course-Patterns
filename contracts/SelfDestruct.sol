@@ -7,7 +7,8 @@ contract SelfDestruct {
 
   modifier  OwnerOnly {
     if(msg.sender != owner){
-      throw;
+      /** throw; **/
+      revert();
     } else {
       _;
     }
