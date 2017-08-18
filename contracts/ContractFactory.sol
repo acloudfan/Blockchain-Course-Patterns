@@ -72,7 +72,6 @@ contract ContractFactory {
 
 
   // Returns the information about the child contract at specified index
-
   function  getInfo(uint8 childIndex) constant returns(uint8, address, bytes32){
     
     return (children[childIndex].identity(),children[childIndex].owner(),children[childIndex].name());
