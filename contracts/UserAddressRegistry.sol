@@ -91,7 +91,7 @@ contract UserAddressRegistry {
   }
 
   /**
-   * Solidity soes not provide a out of the box function to remove the 
+   * Solidity does not provide an out of the box function to remove the 
    * element of an array and shrink it.
    **/
   function removeFromAddresses(address addr) private {
