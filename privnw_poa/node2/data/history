@@ -1,0 +1,7 @@
+
+admin.peers
+edxir
+miner.start()
+miner.stop()
+miner.start()
+miner.stop()

@@ -1,0 +1,11 @@
+admin.peers
+geth --networkid 1015 --datadir "./data" --bootnodes 'enode://2163968fbf0bd4587bd2a8c8434e2afd5acd9edde95dabbf573c29fa5117ead263b7b4b268e6b35b9ac3300e9052f1e98e831dd11854b8a508d4242adc1fb489@localhost:30310' --nodiscover --port  30303 --ipcdisable console
+miner.start()
+admin.addPeer('enode://2163968fbf0bd4587bd2a8c8434e2afd5acd9edde95dabbf573c29fa5117ead263b7b4b268e6b35b9ac3300e9052f1e98e831dd11854b8a508d4242adc1fb489@localhost:30310')
+admin.addPeer('enode://2163968fbf0bd4587bd2a8c8434e2afd5acd9edde95dabbf573c29fa5117ead263b7b4b268e6b35b9ac3300e9052f1e98e831dd11854b8a508d4242adc1fb489t:30310')
+admin.addPeer('enode://2163968fbf0bd4587bd2a8c8434e2afd5acd9edde95dabbf573c29fa5117ead263b7b4b268e6b35b9ac3300e9052f1e98e831dd11854b8a508d4242adc1fb489@127.0.1.1:30310')
+admin.peers
+admin.addPeer('enode://2163968fbf0bd4587bd2a8c8434e2afd5acd9edde95dabbf573c29fa5117ead263b7b4b268e6b35b9ac3300e9052f1e98e831dd11854b8a508d4242adc1fb489@127.0.0.1:30310')
+admin.peers
+geth --networkid 1015 --datadir "./data" --bootnodes 'enode://2163968fbf0bd4587bd2a8c8434e2afd5acd9edde95dabbf573c29fa5117ead263b7b4b268e6b35b9ac3300e9052f1e98e831dd11854b8a508d4242adc1fb489@127.0.0.1:30310' --nodiscover --port  30303 --ipcdisable --syncmode full console
+admin.peers
